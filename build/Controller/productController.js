@@ -17,7 +17,7 @@ const products_1 = __importDefault(require("../Models/products"));
 const sales_1 = __importDefault(require("../Models/sales"));
 const getAllProducts = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const page = parseInt(req.query.page);
+        const page = parseInt(req.query.page) || 1;
         const skip = (page - 1) * 10;
         const results = yield sales_1.default.aggregate([
             {
